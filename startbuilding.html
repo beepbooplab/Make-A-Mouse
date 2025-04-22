@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Build Your Plushie</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top shadow-sm">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="#">CuddleCraft Studio</a>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+    <h1 class="text-center mb-4">Build Your Plushie</h1>
+    <div class="row">
+      <!-- Preview Section -->
+      <div id="plushie-preview" class="col-md-6 text-center mb-5">
+        <h2>Your Plushie Preview</h2>
+        <div class="preview-box border p-4">
+          <p><strong>Size:</strong> <span id="preview-size">Not selected</span></p>
+          <p><strong>Animal:</strong> <span id="preview-animal">Not selected</span></p>
+          <img id="preview-image" src="https://via.placeholder.com/200" alt="Plushie Preview" class="img-fluid mt-3">
+        </div>
+      </div>
+  
+      <!-- Form Section -->
+      <div class="col-md-6">
+        <form id="plushie-builder">
+          <!-- Step 1: Pick a Size -->
+          <div id="step-1" class="step">
+            <h2>Step 1: Pick a Size</h2>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="size" id="small" value="Small">
+              <label class="form-check-label" for="small">Small</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="size" id="medium" value="Medium">
+              <label class="form-check-label" for="medium">Medium</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="size" id="large" value="Large">
+              <label class="form-check-label" for="large">Large</label>
+            </div>
+            <button type="button" class="btn btn-primary mt-3" onclick="nextStep(2)">Next</button>
+          </div>
+  
+          <!-- Step 2: Pick an Animal -->
+          <div id="step-2" class="step d-none">
+            <h2>Step 2: Pick an Animal</h2>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="animal" id="bunny" value="Bunny">
+              <label class="form-check-label" for="bunny">Bunny</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="animal" id="bear" value="Bear">
+              <label class="form-check-label" for="bear">Bear</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="animal" id="dragon" value="Dragon">
+              <label class="form-check-label" for="dragon">Dragon</label>
+            </div>
+            <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(1)">Back</button>
+            <button type="button" class="btn btn-primary mt-3" onclick="nextStep(3)">Next</button>
+          </div>
+  
+          <!-- Add more steps here (Color, Smell, Accessories, etc.) -->
+  
+          <!-- Final Step -->
+          <div id="step-final" class="step d-none">
+            <h2>Review Your Plushie</h2>
+            <p>Size: <span id="review-size"></span></p>
+            <p>Animal: <span id="review-animal"></span></p>
+            <!-- Add more review fields here -->
+            <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(2)">Back</button>
+            <button type="submit" class="btn btn-success mt-3">Finish</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript to handle step navigation
+    function nextStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.classList.add('d-none'));
+      document.getElementById(`step-${step}`).classList.remove('d-none');
+    }
+
+    function prevStep(step) {
+      document.querySelectorAll('.step').forEach(s => s.classList.add('d-none'));
+      document.getElementById(`step-${step}`).classList.remove('d-none');
+    }
+  </script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
