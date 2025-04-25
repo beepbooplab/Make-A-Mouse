@@ -3,6 +3,13 @@ body {
     background-color: #fffdf9;
   }
   
+  .hero {
+    height: 90vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+                url(https://lh4.googleusercontent.com/proxy/70QwJtrCBlCxqNRkTRZfcamdhsyIG15UMx2QykRe1-jCc7Mm0Meq6YbfLn1m7eBeRHPSR-JLcvwq5KQnD4vQiwhcQaCNu2hwVx8qn7VV5VHoHVwXGkOfy5JirOokJ4ujD0gXrTd69WqUpzroXe_AxGFj1hYjPLCIX2KY41WcjGAqLd3zhGgdEH5gUuXOlVE)
+                 center/cover no-repeat;
+  }
+  
   .card-title {
     font-weight: bold;
   }
