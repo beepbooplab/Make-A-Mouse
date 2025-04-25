@@ -3,12 +3,6 @@ body {
     background-color: #fffdf9;
   }
   
-  .hero {
-    height: 90vh;
-    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-                url('https://aicdn.picsart.com/2927a015-e366-47ea-af18-e8548cd51e13.png') center/cover no-repeat;
-  }
-  
   .card-title {
     font-weight: bold;
   }
