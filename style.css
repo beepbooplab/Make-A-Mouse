@@ -26,13 +26,6 @@ body {
     color: white !important;
   }
 
-/* Override the active (pressed) state */
-  .btn-primary:active {
-    background-color: #d63384 !important; /* Darker pink for active */
-    border-color: #d63384 !important;
-    box-shadow: none !important; /* Remove Bootstrap's default shadow */
-    color: white !important;
-  }
 
   .btn-outline-primary {
     border-color: #ffcad4;
@@ -44,3 +37,8 @@ body {
     color: white;
   }
   
+.navbar-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
