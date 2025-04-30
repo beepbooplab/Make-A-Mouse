@@ -38,7 +38,7 @@ body {
   }
   
 .navbar-logo {
-  width: 100px;
-  height: 100px;
+  width: 80px;
+  height: 80px;
   object-fit: contain; /* Ensures the image maintains its aspect ratio */
 }
