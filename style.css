@@ -26,17 +26,6 @@ body {
     color: white !important;
   }
 
-
-  .btn-outline-primary {
-    border-color: #ffcad4;
-    color: #ff6f91;
-  }
-  
-  .btn-outline-primary:hover {
-    background-color: #ffcad4;
-    color: white;
-  }
-  
 .navbar-logo {
   width: 80px;
   height: 80px;
@@ -45,12 +34,24 @@ body {
 .collection-hero {
   height: 90vh;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url(https://media.canva.com/v2/image-resize/format:JPG/height:452/quality:92/uri:ifs%3A%2F%2F%2F188907f3-2024-418c-8977-bab6b066350c/watermark:F/width:800?csig=AAAAAAAAAAAAAAAAAAAAAIzpob9QuonlsHBIjBtJUg-MWBuEBAnhrpH8MN3-nBH4&exp=1746038355&osig=AAAAAAAAAAAAAAAAAAAAAHsoWEuCotdJ-EooNe-9hSFr2LBZ-bXeAG36-E5w5bL2&signer=media-rpc&x-canva-quality=screen)
+              url(https://aicdn.picsart.com/7c922e54-d714-4758-a821-29c4dd50ec29.png)
                center/cover no-repeat;
 }
 .about-hero {
   height: 90vh;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
               url(https://aicdn.picsart.com/6ff4367c-6eb5-4679-b511-765b20ab6970.png)
+               center/cover no-repeat;
+}
+.watermelon{
+  text-align: center;
+}
+.mango{
+  text-align: center;
+}
+.shop-hero {
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url(https://aicdn.picsart.com/a4b8f134-ca14-457e-859e-a2501bda0aa9.png)
                center/cover no-repeat;
 }
