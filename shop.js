@@ -54,13 +54,14 @@ function getCart() {
   }
   
   // Attach event listeners to "Add to Cart" buttons
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function () {
-      const productElement = this.closest('.product');
+document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function (event) {
+      event.preventDefault(); // Prevent default link behavior
+  
       const product = {
-        id: productElement.dataset.id,
-        name: productElement.dataset.name,
-        price: parseFloat(productElement.dataset.price)
+        id: this.dataset.id,
+        name: this.dataset.name,
+        price: parseFloat(this.dataset.price)
       };
   
       addToCart(product);
