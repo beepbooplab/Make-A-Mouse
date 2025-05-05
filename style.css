@@ -91,3 +91,9 @@ body {
   margin: 10px 0;
   max-width: 300px;
 }
+.outlined-text {
+  font-size: 3rem; /* Adjust size as needed */
+  color: white; /* Fill color */
+  -webkit-text-stroke: 2px pink; /* Outline color and thickness */
+  text-align: center; /* Optional: Center alignment */
+}

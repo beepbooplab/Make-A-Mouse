@@ -1,4 +1,4 @@
-/*handle adding to cart and removing from cart*/
+// Utility functions for cart management
 function getCart() {
     return JSON.parse(localStorage.getItem('cart')) || [];
   }
@@ -13,6 +13,7 @@ function getCart() {
     document.getElementById('cart-count').textContent = count;
   }
   
+  // Add a product to the cart
   function addToCart(product) {
     const cart = getCart();
     const existing = cart.find(item => item.id === product.id);
@@ -28,26 +29,7 @@ function getCart() {
     updateCartCount();
   }
   
-  document.querySelectorAll('.add-to-cart').forEach(button => {
-    button.addEventListener('click', function () {
-      const productElement = this.closest('.product');
-      const product = {
-        id: productElement.dataset.id,
-        name: productElement.dataset.name,
-        price: parseFloat(productElement.dataset.price)
-      };
-  
-      addToCart(product);
-    });
-  });
-  
-  updateCartCount();
-
-  /*display cart items*/
-  function getCart() {
-    return JSON.parse(localStorage.getItem('cart')) || [];
-  }
-  
+  // Render cart items in the cart container
   function renderCart() {
     const cart = getCart();
     const cartContainer = document.getElementById('cart-items');
@@ -71,5 +53,24 @@ function getCart() {
     });
   }
   
-  renderCart();
+  // Attach event listeners to "Add to Cart" buttons
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', function () {
+      const productElement = this.closest('.product');
+      const product = {
+        id: productElement.dataset.id,
+        name: productElement.dataset.name,
+        price: parseFloat(productElement.dataset.price)
+      };
   
+      addToCart(product);
+    });
+  });
+  
+  // Initialize cart count on page load
+  updateCartCount();
+  
+  // Render cart items if a cart container exists
+  if (document.getElementById('cart-items')) {
+    renderCart();
+  }
