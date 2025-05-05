@@ -55,3 +55,9 @@ body {
               url(https://aicdn.picsart.com/a4b8f134-ca14-457e-859e-a2501bda0aa9.png)
                center/cover no-repeat;
 }
+.create-hero{
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url(https://aicdn.picsart.com/5325c165-4c8f-41ba-b876-17feecaece66.png)
+               center/cover no-repeat;
+}
