@@ -24,6 +24,16 @@
           <li class="nav-item active"><a class="nav-link" href="shop.html">Shop</a></li>
           <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
           <li class="nav-item"><a class="nav-link btn btn-primary text-white ms-2" href="create.html">Create</a></li>
+          <!-- Cart Icon -->
+          <li class="nav-item">
+            <a class="nav-link position-relative" href="cart.html">
+              🛒
+              <span id="cart-count" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                0
+                <span class="visually-hidden">items in cart</span>
+              </span>
+            </a>
+          </li>
         </ul>
       </div>
     </div>
@@ -31,45 +41,47 @@
 
     <!-- Hero Section -->
     <section class="create-hero d-flex align-items-center justify-content-center text-center text-white" 
-        style="background-image: url('https://aicdn.picsart.com/5325c165-4c8f-41ba-b876-17feecaece66.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh;">
+        style="background-image: url('https://aicdn.picsart.com/a6ea9f78-82d2-4c9a-823a-61a2eec3a048.png'); background-size: cover; background-position: center; background-repeat: no-repeat; height: 100vh;">
         <div class="container">
             <h1 class="display-4 fw-bold text-black">The Mousetique</h1>
             <p class="lead text-black">A tiny boutique of creaturely curiosities - where size, scent, and spirit are yours to choose.</p>
             <a href="startbuilding.html" class="btn btn-primary btn-lg">Create Yours</a>
         </div>
     </section>
+  
+  
 
   <!-- Plushie Cards -->
   <section class="py-5">
     <div class="container">
-      <h2 class="text-center mb-4">Choose Your Plushie Base</h2>
+      <h2 class="text-center mb-4">Related Products</h2>
       <div class="row g-4">
         <div class="col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="htt" class="card-img-top" alt="Bunny">
+            <img src="https://aicdn.picsart.com/48c8fff1-002e-4c92-9f70-fd8b1746d773.png" class="card-img-top" alt="Featured product">
             <div class="card-body">
-              <h5 class="card-title">Bunny</h5>
-              <p class="card-text">Soft, floppy ears and the gentlest hops.</p>
+              <h5 class="card-title">Featured product</h5>
+              <p class="card-text">perfect for a cuddle plush</p>
               <a href="#" class="btn btn-outline-primary">Choose</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Bear">
+            <img src="https://aicdn.picsart.com/a9de6000-9d19-455e-85b6-68070de6e5d6.png" class="card-img-top" alt="Product ">
             <div class="card-body">
-              <h5 class="card-title">Bear</h5>
-              <p class="card-text">Classic snuggles with a big heart.</p>
+              <h5 class="card-title">Product </h5>
+              <p class="card-text">Crochet keychain</p>
               <a href="#" class="btn btn-outline-primary">Choose</a>
             </div>
           </div>
         </div>
         <div class="col-md-4">
           <div class="card text-center shadow-sm">
-            <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Dragon">
+            <img src="https://aicdn.picsart.com/249fd015-5772-4ae6-819c-4667dcb25bca.png" class="card-img-top" alt="Product">
             <div class="card-body">
-              <h5 class="card-title">Dragon</h5>
-              <p class="card-text">Fierce, fluffy, and full of magic.</p>
+              <h5 class="card-title">Product</h5>
+              <p class="card-text">Baby Toy</p>
               <a href="#" class="btn btn-outline-primary">Choose</a>
             </div>
           </div>
@@ -84,5 +96,6 @@
   </footer>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="shop.js"></script>
 </body>
 </html>
