@@ -106,3 +106,26 @@ body {
   font-size: 1rem; /* Adjust font size */
   color: #333; /* Text color */
 }
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  margin-right: 20px;
+}
+
+.cart-item-content h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.cart-item-content p {
+  margin: 5px 0;
+}
