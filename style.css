@@ -56,35 +56,136 @@ body {
                center/cover no-repeat;
 }
 
-/*cart page*/
-.cart-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #fffdf9;
+/* General body styling for the cart page */
+body {
+  font-family: 'Poppins', 'Segoe UI', sans-serif; /* Modern and elegant font */
+  background-color: #fefcfb; /* Soft off-white background */
+  margin: 0;
+  padding: 0;
+  color: #333; /* Neutral text color */
 }
-.cart-link {
-  position: relative;
+
+/* Header styling */
+header {
+  background-color: #ffe4e9; /* Soft pink background */
+  padding: 20px;
+  text-align: center;
+  border-bottom: 2px solid #ffb3c1; /* Subtle pink border */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.2rem; /* Slightly larger font size */
+  color: #444; /* Darker text for contrast */
+  font-weight: 600;
+}
+
+header a {
+  display: inline-block;
+  margin-top: 10px;
+  color: #ff6f91; /* Bright pink for links */
   text-decoration: none;
-  color: black;
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.cart-icon {
-  width: 32px;
+header a:hover {
+  text-decoration: underline;
+  color: #ff3d68; /* Darker pink on hover */
 }
 
-#cart-count {
-  position: absolute;
-  top: -5px;
-  right: -10px;
-  background: red;
+/* Cart items container */
+#cart-items {
+  padding: 25px;
+  max-width: 800px;
+  margin: 30px auto;
+  background-color: #ffffff; /* White background */
+  border: 1px solid #f0c4d7; /* Light pink border */
+  border-radius: 12px; /* Softer rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Subtle shadow */
+}
+
+/* Individual cart item styling */
+.cart-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #f0c4d7; /* Light pink separator */
+  padding-bottom: 15px;
+}
+
+.cart-item:last-child {
+  border-bottom: none;
+}
+
+/* Cart item image */
+.cart-item-image {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  margin-right: 20px;
+  border: 1px solid #ffe4e9; /* Soft pink border */
+  border-radius: 8px; /* Rounded corners */
+  background-color: #fffdfb; /* Subtle cream background */
+}
+
+/* Cart item content */
+.cart-item-content h3 {
+  margin: 0;
+  font-size: 1.4rem; /* Slightly larger font size */
+  color: #444;
+  font-weight: 600;
+}
+
+.cart-item-content p {
+  margin: 5px 0;
+  font-size: 1rem;
+  color: #666; /* Softer text color */
+}
+
+/* Remove button */
+.btn-danger {
+  background-color: #ff6f91; /* Bright pink */
   color: white;
-  padding: 2px 6px;
-  border-radius: 50%;
-  font-size: 12px;
+  border: none;
+  padding: 8px 15px;
+  cursor: pointer;
+  border-radius: 6px; /* Softer rounded corners */
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+.btn-danger:hover {
+  background-color: #ff3d68; /* Darker pink on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Empty cart message */
+#cart-items p {
+  text-align: center;
+  font-size: 1.3rem; /* Slightly larger font size */
+  color: #888; /* Muted text color */
+  font-style: italic; /* Elegant italicized text */
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  #cart-items {
+    padding: 15px;
+  }
+
+  .cart-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .cart-item-image {
+    margin-bottom: 10px;
+  }
+}
+
+/*text box style*/
 .product {
   border: 1px solid #ccc;
   padding: 10px;
@@ -105,27 +206,4 @@ body {
   border-radius: 5px; /* Rounded corners */
   font-size: 1rem; /* Adjust font size */
   color: #333; /* Text color */
-}
-.cart-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #ddd;
-  padding-bottom: 10px;
-}
-
-.cart-item-image {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin-right: 20px;
-}
-
-.cart-item-content h3 {
-  margin: 0;
-  font-size: 1.2rem;
-}
-
-.cart-item-content p {
-  margin: 5px 0;
 }

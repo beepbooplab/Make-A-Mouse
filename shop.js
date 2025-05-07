@@ -44,23 +44,27 @@ function addToCart(product) {
   updateCartCount(); // Update the cart count in the navbar
 }
 
-// Render the cart items on the cart page
 function renderCart() {
   const cart = getCart();
   const cartContainer = document.getElementById('cart-items');
+  const cartTotalElement = document.getElementById('cart-total'); // Select the total price container
 
   if (!cartContainer) return; // Exit if the cart container doesn't exist
 
   cartContainer.innerHTML = ''; // Clear the container
+  let totalPrice = 0; // Initialize total price
 
   if (cart.length === 0) {
     // If the cart is empty, display a message
     cartContainer.innerHTML = '<p>Your cart is empty.</p>';
+    cartTotalElement.textContent = 'Total: $0.00'; // Reset total price
     return;
   }
 
   // Loop through the cart and create HTML for each item
   cart.forEach(item => {
+    totalPrice += item.price * item.quantity; // Add to total price
+
     const div = document.createElement('div');
     div.classList.add('cart-item');
     div.innerHTML = `
@@ -70,13 +74,15 @@ function renderCart() {
           <h3>${item.name}</h3>
           <p>Price: $${item.price.toFixed(2)}</p>
           <p>Quantity: ${item.quantity}</p>
-          <p>Total: $${(item.price * item.quantity).toFixed(2)}</p>
           <button class="btn btn-danger remove-item" data-id="${item.id}">Remove</button>
         </div>
       </div>
     `;
     cartContainer.appendChild(div);
   });
+
+  // Update the total price at the end of the page
+  cartTotalElement.textContent = `Total: $${totalPrice.toFixed(2)}`;
 
   // Attach event listeners to "Remove" buttons
   setupRemoveButtons();
