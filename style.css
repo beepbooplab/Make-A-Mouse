@@ -40,7 +40,7 @@ body {
 .about-hero {
   height: 90vh;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url(https://aicdn.picsart.com/6ff4367c-6eb5-4679-b511-765b20ab6970.png)
+              url(https://media-hosting.imagekit.io/cd7bf0fec13e4801/screenshot_1746636151427.png?Expires=1841244152&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=hcoPoY7EcW24Hc1SuZNm91TF5jYxq7ijC1u0NP15F8YrSo1Y4Wqx9xaoEBmwqUsau6iqpxNos8ZHN3R5maLT~WilAm2pO20y9yLGTVIgY26nHUwKjBgQmL2ao7PM~9kR5lNYehVpBs01KDHRbPMTlRuM5NwLaNcCBacJMswV4kFGdc2qtJ3XZL6wYHvrAgZ2xVR6HVvgcF1gCEtKbWnH4BJVHcsjHkyGEqqW~-6pZ0ZH-yu73fiKdT355O8RU9Z0XsNVR43-NJWlv~GTtGKtvYxGgF0EQ9sFuRH01K985H7jJkUIsbBfj7qZDJdFiwKq90Un1xf325rKWz2ZJgHcbA__)
                center/cover no-repeat;
 }
 .watermelon{
@@ -52,7 +52,13 @@ body {
 .shop-hero {
   height: 90vh;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url(https://aicdn.picsart.com/a4b8f134-ca14-457e-859e-a2501bda0aa9.png)
+              url(https://media-hosting.imagekit.io/62d32d69f7ac44ab/Untitled%20design.png?Expires=1841243954&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=dg7tHyhsVDu2wYMRE53Xn1wChgf4YrGtbWFDFpkS99ie7M3r~nveTu5BRlGw6xy5F5j93nMWiXWm5nfqyPAqL-bf2r1sPvx4GK-FFchzGBU6KKZAz606jjDNLrnoK1rPz0pGVM2aEXfvpyM-Et8oAbj3Eg0TP29xlvrQ6Zh0jD2puVfchSw8tI59O7FFWQ6SYlnyMg9lUDxwJZSWmLF9cgA5OXTLeZrjFu8mDEx5zWd0hf7govSHj8YKqKe0a3pz5KY8eL8foztkzS4AO8comGRFcoK5E4mvKMsjt-IbMABA3qwRTTYVta797-w2MZlOdu4QU2HXbfrD2iF63vJRWQ__)
+               center/cover no-repeat;
+}
+.create-hero{
+  height: 90vh;
+  background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+              url(https://aicdn.picsart.com/a6ea9f78-82d2-4c9a-823a-61a2eec3a048.png)
                center/cover no-repeat;
 }
 
