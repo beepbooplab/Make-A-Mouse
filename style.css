@@ -213,3 +213,34 @@ header a:hover {
   font-size: 1rem; /* Adjust font size */
   color: #333; /* Text color */
 }
+
+/* Progress Line Styling */
+.progress-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.progress {
+  height: 10px;
+  background-color: #f0f0f0;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #ff6f91; /* Bright pink */
+  transition: width 0.3s ease;
+}
+
+.progress-steps {
+  font-size: 1.1rem; /* Slightly larger font size */
+  color: #666;
+  font-weight: bold; /* Make the text bold for better visibility */
+}
+
+.step-label {
+  flex: 1;
+  text-align: center;
+}

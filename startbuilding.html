@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">
-        <img src="https://aicdn.picsart.com/5074195b-138d-45c0-bbef-cea1a012e618.png" alt="Logo" class="navbar-logo">
+        <img src="https://media-hosting.imagekit.io/4317c59656914583/5074195b-138d-45c0-bbef-cea1a012e618.png?Expires=1841325910&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NzuYpqTOamnfOzC8ChEVC1lVV9h6vgAif1a2uUfCnXIP6oCMinohwPaH5tE2f10s3aT8oRWKt6MfvwJHVdximF22-yW7e~TQDKKtfycKl6~sAyoq42~CY5YI9kpp5H1PFH0q-x8Gcw2rVYBsL7spiO6hQQRbH2bjThyH9XTXh-RcrsZnXR9c01UY5LIRcAXkhGy0a6bQc13gMcQ-V8uS-vwsM2~0IPVpSfYLBtqJ~6XZEomqnFFI6EgbMmFxxMVyrzeTWk4rzdmed1Xx-9tR5-F2zyiuQNNd~gKEFDr7ySS-t3r6qci4pq9Z5MXrjAxYuL3YLjPeTMDSbEfRJIMOfg__" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -46,7 +46,9 @@
         <h2>Your Plushie Preview</h2>
         <div class="preview-box border p-4">
           <p><strong>Size:</strong> <span id="preview-size">Not selected</span></p>
-          <p><strong>Animal:</strong> <span id="preview-animal">Not selected</span></p>
+          <p><strong>Mouse:</strong> <span id="preview-mouse">Not selected</span></p>
+          <p><strong>Scent:</strong> <span id="preview-scent">Not selected</span></p>
+          <p><strong>Name:</strong> <span id="preview-name">Not named yet</span></p>
           <img id="preview-image" src="https://via.placeholder.com/200" alt="Plushie Preview" class="img-fluid mt-3">
         </div>
       </div>
@@ -72,55 +74,163 @@
             <button type="button" class="btn btn-primary mt-3" onclick="nextStep(2)">Next</button>
           </div>
   
-          <!-- Step 2: Pick an Animal -->
+          <!-- Step 2: Pick a Mouse-->
           <div id="step-2" class="step d-none">
-            <h2>Step 2: Pick an Animal</h2>
+            <h2>Step 2: Pick a Mouse</h2>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="animal" id="bunny" value="Bunny">
-              <label class="form-check-label" for="bunny">Bunny</label>
+              <input class="form-check-input" type="radio" name="mouse" id="Cheddarina" value="Cheddarina">
+              <label class="form-check-label" for="Cheddarina">Cheddarina</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="animal" id="bear" value="Bear">
-              <label class="form-check-label" for="bear">Bear</label>
+              <input class="form-check-input" type="radio" name="mouse" id="Squeaks" value="Squeaks">
+              <label class="form-check-label" for="Squeaks">Squeaks</label>
             </div>
             <div class="form-check">
-              <input class="form-check-input" type="radio" name="animal" id="dragon" value="Dragon">
-              <label class="form-check-label" for="dragon">Dragon</label>
+              <input class="form-check-input" type="radio" name="mouse" id="Chippy" value="Chippy">
+              <label class="form-check-label" for="Chippy">Chippy</label>
             </div>
             <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(1)">Back</button>
             <button type="button" class="btn btn-primary mt-3" onclick="nextStep(3)">Next</button>
           </div>
   
-          <!-- Add more steps here (Color, Smell, Accessories, etc.) -->
-  
+          <!-- Step 3: Pick a Scent -->
+          <div id="step-3" class="step d-none">
+            <h2>Step 3: Pick a Scent</h2>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="lavender" value="Lavender">
+              <label class="form-check-label" for="lavender">Lavender</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="rose" value="Rose">
+              <label class="form-check-label" for="rose">Rose</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="vanilla" value="Vanilla">
+              <label class="form-check-label" for="vanilla">Vanilla</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="coconut" value="Coconut">
+              <label class="form-check-label" for="coconut">Coconut</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="marshmallow" value="Marshmallow">
+              <label class="form-check-label" for="marshmallow">Marshmallow</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="cake" value="Cake">
+              <label class="form-check-label" for="cake">Cake</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="strawberry" value="Strawberry">
+              <label class="form-check-label" for="strawberry">Strawberry</label>
+            </div>
+            <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(2)">Back</button>
+            <button type="button" class="btn btn-primary mt-3" onclick="nextStep(4)">Next</button>
+          </div>
+
+          <!-- Step 4: Name Your Creation -->
+          <div id="step-4" class="step d-none">
+            <h2>Step 4: Name Your Creation</h2>
+            <div class="mb-3">
+              <label for="plushie-name" class="form-label">Enter a name for your plushie:</label>
+              <input type="text" class="form-control" id="plushie-name" placeholder="e.g., Fluffy, Mr. Whiskers">
+            </div>
+            <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(3)">Back</button>
+            <button type="button" class="btn btn-primary mt-3" onclick="nextStep(5)">Next</button>
+          </div>
+
           <!-- Final Step -->
-          <div id="step-final" class="step d-none">
+          <div id="step-5" class="step d-none">
             <h2>Review Your Plushie</h2>
             <p>Size: <span id="review-size"></span></p>
-            <p>Animal: <span id="review-animal"></span></p>
-            <!-- Add more review fields here -->
-            <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(2)">Back</button>
-            <button type="submit" class="btn btn-success mt-3">Finish</button>
+            <p>Mouse: <span id="review-mouse"></span></p>
+            <p>Scent: <span id="review-scent"></span></p>
+            <p>Name: <span id="review-name">Not named yet</span></p>
+            <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(4)">Back</button>
+            <button type="submit" class="btn btn-primary mt-3">Finish</button>
           </div>
         </form>
       </div>
     </div>
+  
+    <!-- Progress Line -->
+    <div class="progress-container mt-5">
+      <div class="progress">
+        <div class="progress-bar" id="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+      </div>
+      <div class="progress-steps d-flex justify-content-between mt-2">
+        <span class="step-label">size</span>
+        <span class="step-label">mouse</span>
+        <span class="step-label">scent</span>
+        <span class="step-label">name</span>
+      </div>
+    </div>
   </div>
 
+  <!-- Include JavaScript -->
   <script>
-    // JavaScript to handle step navigation
+    // JavaScript to handle step navigation, progress bar, and dynamic preview
+    const totalSteps = 5; // Update total steps to 5
+
     function nextStep(step) {
+      console.log(`Navigating to step ${step}`); // Debugging log
       document.querySelectorAll('.step').forEach(s => s.classList.add('d-none'));
       document.getElementById(`step-${step}`).classList.remove('d-none');
+      updateProgressBar(step);
     }
 
     function prevStep(step) {
       document.querySelectorAll('.step').forEach(s => s.classList.add('d-none'));
       document.getElementById(`step-${step}`).classList.remove('d-none');
+      updateProgressBar(step);
     }
-  </script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="shop.js"></script>
+    function updateProgressBar(step) {
+      const progressBar = document.getElementById('progress-bar');
+      const progress = (step / totalSteps) * 100;
+      progressBar.style.width = `${progress}%`;
+      progressBar.setAttribute('aria-valuenow', progress);
+    }
+
+    // Update preview dynamically
+    document.querySelectorAll('input[name="size"]').forEach(input => {
+      input.addEventListener('change', function () {
+        document.getElementById('preview-size').textContent = this.value;
+      });
+    });
+
+    document.querySelectorAll('input[name="mouse"]').forEach(input => {
+      input.addEventListener('change', function () {
+        document.getElementById('preview-mouse').textContent = this.value;
+
+        // Update the preview image based on the selected mouse
+        const previewImage = document.getElementById('preview-image');
+        if (this.value === 'Cheddarina') {
+          previewImage.src = 'https://media-hosting.imagekit.io/c0026e2d27274d30/791bc806-7b41-4549-901b-bb596701bc26.png?Expires=1841244351&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ym9kPROfLCSYXYvqm5wDf7bswQU3wnmEzyqax~~d79zNj9kbYic~WQ68kZpB9lnp4jc0j1MqG4vAXceHzWXvSRoEFWaikjR6Vh38UJ~YqLQS5YUwdZRUccr~fUb6i6gOV0YM1R0g3rD8x92HWwLj8QCMrEOX8vNcRFcVHBWdGrC-hRk9FEc3~voiq70ZFHboIMXa8Jfnh8i4OHDOVuJTseD921OSzmFaY6356pDbk5-CHzkUJntv6nBWyMTz3g~8LD06l3oPSHQkKXVuz3ZHCboxLPfe27HFMl2JR9BOta54QXjFad58702J80Qpb7ZHLqdNbJ0~yiyAaAwBnCMIqg__';
+        } else if (this.value === 'Squeaks') {
+          previewImage.src = 'https://media-hosting.imagekit.io/235b42955d5f4d75/6f81b40f-b9e9-41b6-a62d-319127c6abe4.png?Expires=1841244380&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=HgxXYZTjCNh4UepYCg3eyX2h3mNyiDcfWzhEM0dnWeDDjgcvkAOAiYfUJmTuL5q9m5V8WrxJrqHkpXaWG8FONfmtfvBN0PmGII8U0pX6IBHv-6XqPe4rbGbH2bVyPghFkLK9M47fpvNUbSC2jTVt72l8qb8pO~BTk6Lv02U3b4YiOiyLApOJe-2Mvnb8Br0mM0ipjCkM7UrRrFVFGoKlXVwBFulCUckUINvMHjh1nywFXmPUUi97XYko6oXRjUYSUCjplI151Zm4LbJNdmf44v7I-I6cqEJlvkNdQYv83MxV9qcXqO0mgUnyGp82dQupwcDj0Bmgvmx3-TfenFbh8Q__';
+        } else if (this.value === 'Chippy') {
+          previewImage.src = 'https://media-hosting.imagekit.io/25ce96f57d984c6c/5308b2d4-7e49-4717-b1a5-be8b9bdedb48.png?Expires=1841244404&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=mMzHaXCY-bb~dweqDhV9ujTAQ4myu5c6NnPxiPAoqp4NMsFRARgCuf1Eo7Pvyvari0euXAOg179tVC9~o~DqB1AxUG5G2LoINJBt37xUEB1ieK5aX-oQ~Fg3lmylTHCITilKOmA7MkZqNmAg-wyeXmJx3C0tAfuwSbwF2sPH2H~Dyuj0GXbkglqksb19ECSD1d4aDrwPMovLqPFffSIeALwfcDjXgoxwyGbpqemfEH8oXCGUMvfb6eMp2ap-3jPNEEirh4DNZWqHZFCBZAfvnVFonFAIXcFfTqdhjaoErCdpnLqXNyV9wjrWMi15SqLRIGbkGSYgc7n3atyqt~QtPQ__';
+        }
+      });
+    });
+    // Update preview dynamically for scent
+    document.querySelectorAll('input[name="scent"]').forEach(input => {
+      input.addEventListener('change', function () {
+        document.getElementById('preview-scent').textContent = this.value;
+      });
+    });
+    // Update preview dynamically for name
+    document.getElementById('plushie-name').addEventListener('input', function () {
+      const name = this.value.trim() || 'Not named yet';
+      document.getElementById('preview-name').textContent = name;
+      document.getElementById('review-name').textContent = name;
+    });
+    // Handle form submission
+    document.getElementById('plushie-builder').addEventListener('submit', function (event) {
+      event.preventDefault(); // Prevent default form submission
+      alert('Your plushie has been created!');
+    });
+  </script>
 </body>
 </html>

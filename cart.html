@@ -20,7 +20,32 @@
     Total: $0.00
   </div>
 
+  <!-- Purchase Button -->
+  <div style="text-align: center; margin-top: 20px;">
+    <button id="buy-button" class="btn btn-primary" style="padding: 10px 20px; font-size: 1.2rem; color: white; border: none; border-radius: 5px; cursor: pointer;">
+      Purchase
+    </button>
+  </div>
+
   <!-- Include JavaScript -->
   <script src="shop.js"></script>
+  <script>
+    // Handle "Purchase" button click
+    document.getElementById('buy-button').addEventListener('click', function () {
+      const cart = getCart();
+
+      if (cart.length === 0) {
+        alert('Your cart is empty. Add some items before proceeding.');
+        return;
+      }
+
+      // Clear the cart
+      localStorage.removeItem('cart');
+      updateCartCount(); // Update the cart count in the navbar
+
+      // Redirect to confirmation page
+      window.location.href = 'confirmation.html';
+    });
+  </script>
 </body>
 </html>
