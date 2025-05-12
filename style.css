@@ -34,7 +34,7 @@ body {
 .collection-hero {
   height: 90vh;
   background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
-              url(https://aicdn.picsart.com/40a1c07d-0fa4-47af-8956-90d3210677b9.png)
+              url(https://imagekit.io/tools/asset-public-link?detail=%7B%22name%22%3A%22Untitled%20design%20(10).png%22%2C%22type%22%3A%22image%2Fpng%22%2C%22signedurl_expire%22%3A%222028-05-11T15%3A31%3A32.348Z%22%2C%22signedUrl%22%3A%22https%3A%2F%2Fmedia-hosting.imagekit.io%2Ffa3552100e0a40ee%2FUntitled%2520design%2520(10).png%3FExpires%3D1841671892%26Key-Pair-Id%3DK2ZIVPTIP2VGHC%26Signature%3DJ5j~DJNe-~uKGpngP72WsSDnt8A8Onm5LkonRxUoOyxw63K-z-ABaCDlHEmWIbyGqSWIrngBIeS2bh9Yoma6-G~8q9AXnyyLSM7FWXXT~VLZZBegq1iMjp0je~c7DQW8z8NFDkWJnlbUYsb8nl1QP7neVYgM837UBI7bWnTNjSETFQwCJChGwe0O-8C6VwMcwXBT8vhouKSw5LV3cI6jpeedW-CgEbIxBpz~dZ9NMgCWEPYaZ3rIVZ6m6efMLp3QBRqKYbacx8m5ZiOSSklRFtPnweLuS-h7GBPKhKQG7hF2rUYZBsVNVhmt999P8zpGy2su7RxUXganbqTNbbxrLg__%22%7D)
                center/cover no-repeat;
 }
 .about-hero {
