@@ -45,7 +45,7 @@ function addToCart(product) {
 }
 
 function renderCart() {
-  const cart = getCart();
+  const cart = JSON.parse(localStorage.getItem('cart')) || [];
   const cartContainer = document.getElementById('cart-items');
   const cartTotalElement = document.getElementById('cart-total'); // Select the total price container
 
@@ -72,6 +72,9 @@ function renderCart() {
         <img src="${item.image}" alt="${item.name}" class="cart-item-image" style="width: 100px; height: 100px; object-fit: contain;">
         <div>
           <h3>${item.name}</h3>
+          <p>Size: ${item.size}</p>
+          <p>Mouse: ${item.mouse}</p>
+          <p>Scent: ${item.scent}</p>
           <p>Price: $${item.price.toFixed(2)}</p>
           <p>Quantity: ${item.quantity}</p>
           <button class="btn btn-danger remove-item" data-id="${item.id}">Remove</button>

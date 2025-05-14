@@ -12,7 +12,7 @@
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
     <div class="container">
       <a class="navbar-brand fw-bold" href="index.html">
-        <img src="https://media-hosting.imagekit.io/4317c59656914583/5074195b-138d-45c0-bbef-cea1a012e618.png?Expires=1841325910&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=NzuYpqTOamnfOzC8ChEVC1lVV9h6vgAif1a2uUfCnXIP6oCMinohwPaH5tE2f10s3aT8oRWKt6MfvwJHVdximF22-yW7e~TQDKKtfycKl6~sAyoq42~CY5YI9kpp5H1PFH0q-x8Gcw2rVYBsL7spiO6hQQRbH2bjThyH9XTXh-RcrsZnXR9c01UY5LIRcAXkhGy0a6bQc13gMcQ-V8uS-vwsM2~0IPVpSfYLBtqJ~6XZEomqnFFI6EgbMmFxxMVyrzeTWk4rzdmed1Xx-9tR5-F2zyiuQNNd~gKEFDr7ySS-t3r6qci4pq9Z5MXrjAxYuL3YLjPeTMDSbEfRJIMOfg__" alt="Logo" class="navbar-logo">
+        <img src="img/logo.png" alt="Logo" class="navbar-logo">
       </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
         <span class="navbar-toggler-icon"></span>
@@ -74,7 +74,7 @@
             <button type="button" class="btn btn-primary mt-3" onclick="nextStep(2)">Next</button>
           </div>
   
-          <!-- Step 2: Pick a Mouse-->
+          <!-- Step 2: Pick a Mouse -->
           <div id="step-2" class="step d-none">
             <h2>Step 2: Pick a Mouse</h2>
             <div class="form-check">
@@ -108,22 +108,6 @@
               <input class="form-check-input" type="radio" name="scent" id="vanilla" value="Vanilla">
               <label class="form-check-label" for="vanilla">Vanilla</label>
             </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="scent" id="coconut" value="Coconut">
-              <label class="form-check-label" for="coconut">Coconut</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="scent" id="marshmallow" value="Marshmallow">
-              <label class="form-check-label" for="marshmallow">Marshmallow</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="scent" id="cake" value="Cake">
-              <label class="form-check-label" for="cake">Cake</label>
-            </div>
-            <div class="form-check">
-              <input class="form-check-input" type="radio" name="scent" id="strawberry" value="Strawberry">
-              <label class="form-check-label" for="strawberry">Strawberry</label>
-            </div>
             <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(2)">Back</button>
             <button type="button" class="btn btn-primary mt-3" onclick="nextStep(4)">Next</button>
           </div>
@@ -147,7 +131,7 @@
             <p>Scent: <span id="review-scent"></span></p>
             <p>Name: <span id="review-name">Not named yet</span></p>
             <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(4)">Back</button>
-            <button type="submit" class="btn btn-primary mt-3">Finish</button>
+            <button type="button" class="btn btn-primary mt-3" onclick="addToCart()">Add to Cart</button>
           </div>
         </form>
       </div>
@@ -169,14 +153,19 @@
 
   <!-- Include JavaScript -->
   <script>
-    // JavaScript to handle step navigation, progress bar, and dynamic preview
-    const totalSteps = 5; // Update total steps to 5
+    const totalSteps = 5;
 
     function nextStep(step) {
-      console.log(`Navigating to step ${step}`); // Debugging log
       document.querySelectorAll('.step').forEach(s => s.classList.add('d-none'));
       document.getElementById(`step-${step}`).classList.remove('d-none');
       updateProgressBar(step);
+
+      if (step === 5) {
+        document.getElementById('review-size').textContent = document.getElementById('preview-size').textContent;
+        document.getElementById('review-mouse').textContent = document.getElementById('preview-mouse').textContent;
+        document.getElementById('review-scent').textContent = document.getElementById('preview-scent').textContent;
+        document.getElementById('review-name').textContent = document.getElementById('preview-name').textContent;
+      }
     }
 
     function prevStep(step) {
@@ -192,7 +181,6 @@
       progressBar.setAttribute('aria-valuenow', progress);
     }
 
-    // Update preview dynamically
     document.querySelectorAll('input[name="size"]').forEach(input => {
       input.addEventListener('change', function () {
         document.getElementById('preview-size').textContent = this.value;
@@ -201,35 +189,59 @@
 
     document.querySelectorAll('input[name="mouse"]').forEach(input => {
       input.addEventListener('change', function () {
+        console.log('Selected Mouse:', this.value); // Debugging log
         document.getElementById('preview-mouse').textContent = this.value;
-
-        // Update the preview image based on the selected mouse
         const previewImage = document.getElementById('preview-image');
         if (this.value === 'Cheddarina') {
-          previewImage.src = 'https://media-hosting.imagekit.io/c0026e2d27274d30/791bc806-7b41-4549-901b-bb596701bc26.png?Expires=1841244351&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=Ym9kPROfLCSYXYvqm5wDf7bswQU3wnmEzyqax~~d79zNj9kbYic~WQ68kZpB9lnp4jc0j1MqG4vAXceHzWXvSRoEFWaikjR6Vh38UJ~YqLQS5YUwdZRUccr~fUb6i6gOV0YM1R0g3rD8x92HWwLj8QCMrEOX8vNcRFcVHBWdGrC-hRk9FEc3~voiq70ZFHboIMXa8Jfnh8i4OHDOVuJTseD921OSzmFaY6356pDbk5-CHzkUJntv6nBWyMTz3g~8LD06l3oPSHQkKXVuz3ZHCboxLPfe27HFMl2JR9BOta54QXjFad58702J80Qpb7ZHLqdNbJ0~yiyAaAwBnCMIqg__';
+          previewImage.src = 'img/shop-cheddarina.png';
         } else if (this.value === 'Squeaks') {
-          previewImage.src = 'https://media-hosting.imagekit.io/235b42955d5f4d75/6f81b40f-b9e9-41b6-a62d-319127c6abe4.png?Expires=1841244380&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=HgxXYZTjCNh4UepYCg3eyX2h3mNyiDcfWzhEM0dnWeDDjgcvkAOAiYfUJmTuL5q9m5V8WrxJrqHkpXaWG8FONfmtfvBN0PmGII8U0pX6IBHv-6XqPe4rbGbH2bVyPghFkLK9M47fpvNUbSC2jTVt72l8qb8pO~BTk6Lv02U3b4YiOiyLApOJe-2Mvnb8Br0mM0ipjCkM7UrRrFVFGoKlXVwBFulCUckUINvMHjh1nywFXmPUUi97XYko6oXRjUYSUCjplI151Zm4LbJNdmf44v7I-I6cqEJlvkNdQYv83MxV9qcXqO0mgUnyGp82dQupwcDj0Bmgvmx3-TfenFbh8Q__';
+          previewImage.src = 'assets/images/shop-squeaks.png';
         } else if (this.value === 'Chippy') {
-          previewImage.src = 'https://media-hosting.imagekit.io/25ce96f57d984c6c/5308b2d4-7e49-4717-b1a5-be8b9bdedb48.png?Expires=1841244404&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=mMzHaXCY-bb~dweqDhV9ujTAQ4myu5c6NnPxiPAoqp4NMsFRARgCuf1Eo7Pvyvari0euXAOg179tVC9~o~DqB1AxUG5G2LoINJBt37xUEB1ieK5aX-oQ~Fg3lmylTHCITilKOmA7MkZqNmAg-wyeXmJx3C0tAfuwSbwF2sPH2H~Dyuj0GXbkglqksb19ECSD1d4aDrwPMovLqPFffSIeALwfcDjXgoxwyGbpqemfEH8oXCGUMvfb6eMp2ap-3jPNEEirh4DNZWqHZFCBZAfvnVFonFAIXcFfTqdhjaoErCdpnLqXNyV9wjrWMi15SqLRIGbkGSYgc7n3atyqt~QtPQ__';
+          previewImage.src = 'assets/images/shop-chippy.png';
+        } else {
+          previewImage.src = 'https://via.placeholder.com/200'; // Default image
         }
+        console.log('Preview Image Source:', previewImage.src); // Debugging log
       });
     });
-    // Update preview dynamically for scent
+
     document.querySelectorAll('input[name="scent"]').forEach(input => {
       input.addEventListener('change', function () {
         document.getElementById('preview-scent').textContent = this.value;
       });
     });
-    // Update preview dynamically for name
+
     document.getElementById('plushie-name').addEventListener('input', function () {
       const name = this.value.trim() || 'Not named yet';
       document.getElementById('preview-name').textContent = name;
-      document.getElementById('review-name').textContent = name;
     });
-    // Handle form submission
-    document.getElementById('plushie-builder').addEventListener('submit', function (event) {
-      event.preventDefault(); // Prevent default form submission
-      alert('Your plushie has been created!');
+
+    function addToCart() {
+      const plushie = {
+        id: Date.now().toString(),
+        name: document.getElementById('review-name').textContent,
+        size: document.getElementById('review-size').textContent,
+        mouse: document.getElementById('review-mouse').textContent,
+        scent: document.getElementById('review-scent').textContent,
+        image: document.getElementById('preview-image').src,
+        price: 29.99,
+        quantity: 1
+      };
+
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.push(plushie);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert('Your plushie has been added to the cart!');
+      window.location.href = 'cart.html';
+    }
+
+    function updateCartCount() {
+      const cart = JSON.parse(localStorage.getItem('cart')) || [];
+      document.getElementById('cart-count').textContent = cart.length;
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      updateCartCount();
     });
   </script>
 </body>
