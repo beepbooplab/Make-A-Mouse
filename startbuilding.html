@@ -97,16 +97,64 @@
           <div id="step-3" class="step d-none">
             <h2>Step 3: Pick a Scent</h2>
             <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="bubblegum" value="Bubblegum">
+              <label class="form-check-label" for="bubblegum">Bubblegum</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="caramel" value="Caramel">
+              <label class="form-check-label" for="caramel">Caramel</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="chocolate" value="Chocolate">
+              <label class="form-check-label" for="chocolate">Chocolate</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="cinnamon" value="Cinnamon">
+              <label class="form-check-label" for="cinnamon">Cinnamon</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="coconut" value="Coconut">
+              <label class="form-check-label" for="coconut">Coconut</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="cookies & cream" value="Cookies & Cream">
+              <label class="form-check-label" for="cookies & crean">Cookies & Cream</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="coffee" value="Coffee">
+              <label class="form-check-label" for="coffee">Coffee</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="jasmine" value="Jasmine">
+              <label class="form-check-label" for="jasmine">Jasmine</label>
+            </div>
+            <div class="form-check">
               <input class="form-check-input" type="radio" name="scent" id="lavender" value="Lavender">
               <label class="form-check-label" for="lavender">Lavender</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="mint" value="Mint">
+              <label class="form-check-label" for="mint">Mint</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="peach" value="Peach">
+              <label class="form-check-label" for="peach">Peach</label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="radio" name="scent" id="rose" value="Rose">
               <label class="form-check-label" for="rose">Rose</label>
             </div>
             <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="strawberry" value="Strawberry">
+              <label class="form-check-label" for="strawberry">Strawberry</label>
+            </div>
+            <div class="form-check">
               <input class="form-check-input" type="radio" name="scent" id="vanilla" value="Vanilla">
               <label class="form-check-label" for="vanilla">Vanilla</label>
+            </div>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="scent" id="watermelon" value="Watermelon">
+              <label class="form-check-label" for="watermelon">Watermelon</label>
             </div>
             <button type="button" class="btn btn-secondary mt-3" onclick="prevStep(2)">Back</button>
             <button type="button" class="btn btn-primary mt-3" onclick="nextStep(4)">Next</button>
@@ -189,19 +237,17 @@
 
     document.querySelectorAll('input[name="mouse"]').forEach(input => {
       input.addEventListener('change', function () {
-        console.log('Selected Mouse:', this.value); // Debugging log
         document.getElementById('preview-mouse').textContent = this.value;
         const previewImage = document.getElementById('preview-image');
         if (this.value === 'Cheddarina') {
-          previewImage.src = 'img/shop-cheddarina.png';
+          previewImage.src = 'img/cheddarina.png';
         } else if (this.value === 'Squeaks') {
-          previewImage.src = 'assets/images/shop-squeaks.png';
+          previewImage.src = 'img/squeaks.png';
         } else if (this.value === 'Chippy') {
-          previewImage.src = 'assets/images/shop-chippy.png';
+          previewImage.src = 'img/chippy.png';
         } else {
-          previewImage.src = 'https://via.placeholder.com/200'; // Default image
+          previewImage.src = 'https://via.placeholder.com/200';
         }
-        console.log('Preview Image Source:', previewImage.src); // Debugging log
       });
     });
 
@@ -217,21 +263,31 @@
     });
 
     function addToCart() {
+      const size = document.getElementById('review-size').textContent;
+      let price = 29.99; // default
+
+      if (size === 'Small') {
+        price = 19.99;
+      } else if (size === 'Medium') {
+        price = 29.99;
+      } else if (size === 'Large') {
+        price = 39.99;
+      }
+
       const plushie = {
         id: Date.now().toString(),
         name: document.getElementById('review-name').textContent,
-        size: document.getElementById('review-size').textContent,
+        size: size,
         mouse: document.getElementById('review-mouse').textContent,
         scent: document.getElementById('review-scent').textContent,
         image: document.getElementById('preview-image').src,
-        price: 29.99,
+        price: price,
         quantity: 1
       };
 
       const cart = JSON.parse(localStorage.getItem('cart')) || [];
       cart.push(plushie);
       localStorage.setItem('cart', JSON.stringify(cart));
-      alert('Your plushie has been added to the cart!');
       window.location.href = 'cart.html';
     }
 
@@ -244,5 +300,7 @@
       updateCartCount();
     });
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
